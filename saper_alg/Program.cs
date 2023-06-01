@@ -24,9 +24,8 @@ namespace saper_alg
                     goto m1;
                 }
             }
-            const int boardSize = 10;
+            const int boardSize = 5;
             
-
             char[,] gameBoard = CreateGameBoard(boardSize);
             char[,] mineBoard = PlaceMines(gameBoard, numberOfMines);
             char[,] visibleBoard = CreateVisibleBoard(boardSize);
