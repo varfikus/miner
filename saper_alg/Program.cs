@@ -1,4 +1,4 @@
-﻿using GameLogic;
+﻿using CommonTypes;
 using System;
 
 

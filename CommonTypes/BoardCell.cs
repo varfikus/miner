@@ -1,4 +1,4 @@
-﻿namespace GameLogic
+﻿namespace CommonTypes
 {
     public class BoardCell
     {

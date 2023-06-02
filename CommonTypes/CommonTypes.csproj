@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2713B4FC-740D-49A6-87F1-66C122D8A6B0}</ProjectGuid>
+    <ProjectGuid>{3D5B1425-75E7-457D-B04C-E1FC4E70BE21}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GameLogic</RootNamespace>
-    <AssemblyName>GameLogic</AssemblyName>
+    <RootNamespace>CommonTypes</RootNamespace>
+    <AssemblyName>CommonTypes</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameLogic
+namespace CommonTypes
 {
     public class Board
     {
