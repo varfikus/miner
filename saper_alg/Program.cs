@@ -24,17 +24,15 @@ namespace saper_alg
                     goto m1;
                 }
             }
-            const int boardSize = 5;
+            const int boardSize = 10;
 
-            var gameBoard = Board.CreateGameBoard(boardSize, numberOfMines);
-            var visibleBoard = Board.CreateVisibleBoard(boardSize);
+            var gameBoard = new Board(boardSize, numberOfMines);
 
             var gameOver = false;
-            var remainingCells = boardSize * boardSize - numberOfMines;
 
             while (!gameOver)
             {
-                DrawBoard(visibleBoard, false);
+                DrawBoard(gameBoard, false);
 
                 Console.Write("Введите координаты ячейки: ");
                 var input = Console.ReadLine().ToUpper();
@@ -42,7 +40,9 @@ namespace saper_alg
                 var row = input[0] - 'A';
                 var col = int.Parse(input.Substring(1)) - 1;
 
-                if (gameBoard[row, col].Type == CellType.Bomb)
+                var cell = gameBoard.OpenCell(row, col);
+
+                if (cell.Type == CellType.Bomb)
                 {
                     Console.WriteLine("Вы проиграли!");
                     gameOver = true;
@@ -50,12 +50,8 @@ namespace saper_alg
                 }
                 else
                 {
-                    visibleBoard[row, col].NearBombCount = Board.CountAdjacentMines(gameBoard, row, col);
-                    visibleBoard[row, col].IsOpen = true;
-
-                    remainingCells--;
                     Console.Clear();
-                    if (remainingCells == 0)
+                    if (gameBoard.RemainingCells == 0)
                     {
                         Console.WriteLine("Поздравляю, вы выиграли!");
                         gameOver = true;
@@ -68,9 +64,9 @@ namespace saper_alg
             Console.ReadKey();
         }
 
-        private static void DrawBoard(BoardCell[,] board, bool showAllBoard)
+        private static void DrawBoard(Board board, bool showAllBoard)
         {
-            var size = board.GetLength(0);
+            var size = board.BoardSize;
 
             Console.WriteLine("  " + string.Join(" ", new string[size]));
             Console.Write("  ");
@@ -86,12 +82,12 @@ namespace saper_alg
 
                 for (var col = 0; col < size; col++)
                 {
-                    var cell = board[row, col];
+                    var cell = board.OpenCell(row, col);
 
                     var textForCell = "-";
 
                     if (showAllBoard) textForCell = cell.Type == CellType.Bomb ? "*" : ".";
-                    else if (cell.IsOpen) textForCell = board[row, col].NearBombCount?.ToString() ?? "0";
+                    else if (cell.IsOpen) textForCell = cell.NearBombCount?.ToString() ?? "0";
 
                     Console.Write($"{textForCell} ");
                 }
