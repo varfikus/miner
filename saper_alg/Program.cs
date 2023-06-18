@@ -40,7 +40,7 @@ namespace saper_alg
                 var row = input[0] - 'A';
                 var col = int.Parse(input.Substring(1)) - 1;
 
-                var cell = gameBoard.OpenCell(row, col);
+                var cell = gameBoard.GetCell(row, col);
 
                 if (cell.Type == CellType.Bomb)
                 {
@@ -82,7 +82,7 @@ namespace saper_alg
 
                 for (var col = 0; col < size; col++)
                 {
-                    var cell = board.OpenCell(row, col);
+                    var cell = board.GetCell(row, col);
 
                     var textForCell = "-";
 

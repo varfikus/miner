@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33712.159
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "saper_alg\ConsoleApp.csproj", "{A80EAA6D-0D75-4B4F-9183-45C9AD6E1D44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTypes", "CommonTypes\CommonTypes.csproj", "{3D5B1425-75E7-457D-B04C-E1FC4E70BE21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsApp", "WindowsApp\WindowsApp.csproj", "{22C977AC-4E01-4CC0-8078-71CFDC32D496}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3D5B1425-75E7-457D-B04C-E1FC4E70BE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D5B1425-75E7-457D-B04C-E1FC4E70BE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D5B1425-75E7-457D-B04C-E1FC4E70BE21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C977AC-4E01-4CC0-8078-71CFDC32D496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C977AC-4E01-4CC0-8078-71CFDC32D496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C977AC-4E01-4CC0-8078-71CFDC32D496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C977AC-4E01-4CC0-8078-71CFDC32D496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

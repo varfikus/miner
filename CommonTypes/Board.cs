@@ -14,7 +14,7 @@ namespace CommonTypes
         public Board(int size, int numberOfMines)
         {
             _gameBoard = CreateGameBoard(size, numberOfMines);
-            _remainingCells = size * 2 - numberOfMines;
+            _remainingCells = size * size - numberOfMines;
         }
 
         public static BoardCell[,] CreateGameBoard(int size, int numberOfMines)
@@ -57,9 +57,15 @@ namespace CommonTypes
             return board;
         }
 
-        public BoardCell OpenCell(int row, int col)
+        public BoardCell GetCell(int row, int col)
         {
             _gameBoard[row, col].NearBombCount = CountAdjacentMines(row, col);
+
+            return _gameBoard[row, col];
+        }
+
+        public BoardCell OpenCell(int row, int col)
+        {
             _gameBoard[row, col].IsOpen = true;
             if (_gameBoard[row, col].Type != CellType.Bomb)
             {
@@ -86,6 +92,14 @@ namespace CommonTypes
             }
 
             return count;
+        }
+
+        public bool flaged(int row, int col)
+        {
+            bool fl = _gameBoard[row, col].IsFlag;
+            _gameBoard[row, col].IsFlag = !_gameBoard[row, col].IsFlag;
+
+            return fl;
         }
     }
 }
